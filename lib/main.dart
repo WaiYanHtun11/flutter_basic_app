@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic_app/key_example.dart';
 import 'package:flutter_basic_app/widgets/icon.dart';
 import 'package:flutter_basic_app/widgets/text.dart';
 import 'package:flutter_basic_app/widgets/text_field.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const TextFieldWidget(),
+      home: const KeyExample(),
     );
   }
 }
