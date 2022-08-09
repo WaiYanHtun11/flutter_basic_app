@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic_app/key_example.dart';
+import 'package:flutter_basic_app/widgets/card.dart';
 import 'package:flutter_basic_app/widgets/icon.dart';
 import 'package:flutter_basic_app/widgets/image.dart';
 import 'package:flutter_basic_app/widgets/text.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ImageExample(),
+      home: const CardExample(),
     );
   }
 }
