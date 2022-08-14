@@ -40,6 +40,7 @@ dependencies:
   extended_image: ^6.2.1
   new_gradient_app_bar: ^0.2.0
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
