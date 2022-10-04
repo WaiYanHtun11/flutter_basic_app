@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic_app/animations/animated_containter.dart';
+import 'package:flutter_basic_app/animations/animated_icons.dart';
+import 'package:flutter_basic_app/animations/animation_package.dart';
+import 'package:flutter_basic_app/animations/opacity.dart';
 import 'package:flutter_basic_app/appbars/backdrop.dart';
 import 'package:flutter_basic_app/appbars/basic_appbar.dart';
 import 'package:flutter_basic_app/appbars/bottom_appbar.dart';
@@ -31,6 +35,7 @@ import 'package:flutter_basic_app/widgets/text_field.dart';
 import 'package:flutter_basic_app/widgets/text_form_field.dart';
 import 'package:flutter_basic_app/widgets/dropdown_button.dart';
 
+import 'animations/hero.dart';
 import 'appbars/convex_appbar.dart';
 import 'layouts/container.dart';
 import 'lists/expansion_tile.dart';
@@ -54,7 +59,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const StreamBuilderExample(),
+      home: const AnimationPackageExample(),
       // initialRoute: RoutesExample.routeName,
       routes: {
         RoutesExample.routeName : (context) => const RoutesExample()

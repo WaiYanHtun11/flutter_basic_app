@@ -45,6 +45,7 @@ dependencies:
   convex_bottom_bar: ^3.0.0
   hidable: ^1.0.3
   intl: ^0.17.0
+  animations: ^2.0.5
 
 
 dev_dependencies:
