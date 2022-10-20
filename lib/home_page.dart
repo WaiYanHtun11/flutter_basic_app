@@ -6,12 +6,39 @@ import 'package:flutter_basic_app/layout_page.dart';
 import 'package:flutter_basic_app/list_page.dart';
 import 'package:flutter_basic_app/navigation_page.dart';
 import 'package:flutter_basic_app/widget_page.dart';
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+  bool isPreview = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(const Duration(seconds: 3)).then((_){
+        setState(() {
+          isPreview = false;
+        });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+
+    Widget splashScreen = const Scaffold(
+      body: Center(
+        child: FlutterLogo(
+          size: 64,
+        ),
+      ),
+    );
+    Widget homePage = Scaffold(
       appBar: AppBar(
         title: const Text("Flutter Basic App"),
       ),
@@ -24,10 +51,10 @@ class HomePage extends StatelessWidget {
             onTap: (){
               //Navigate to Widget Page
               Navigator.push(
-                context,
-                MaterialPageRoute(
+                  context,
+                  MaterialPageRoute(
                     builder: (BuildContext ctx) => const WidgetPage(),
-                )
+                  )
               );
             },
           ),
@@ -90,7 +117,7 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext ctx) => const NavigationPage(),
+                    builder: (BuildContext ctx) => const NavigationPage(),
                   )
               );
             },
@@ -106,7 +133,7 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => const AsyncPage(),
+                    builder: (BuildContext context) => const AsyncPage(),
                   )
               );
             },
@@ -122,7 +149,7 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext ctx) => const AnimationPage(),
+                    builder: (BuildContext ctx) => const AnimationPage(),
                   )
               );
             },
@@ -135,5 +162,6 @@ class HomePage extends StatelessWidget {
         ],
       ),
     );
+    return isPreview ? splashScreen : homePage;
   }
 }
